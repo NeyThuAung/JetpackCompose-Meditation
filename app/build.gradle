@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace 'com.nta.jetpackcompose_meditation'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.nta.jetpackcompose_meditation"
-        minSdk 24
+        minSdk 25
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -23,6 +23,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.5.2' // Use a compatible Compose Compiler version
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -30,6 +33,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        compose true
+        viewBinding true
+    }
+
 }
 
 dependencies {
@@ -42,4 +51,20 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
+
+    //For Jetpack Compose
+    debugImplementation libs.androidx.ui.tooling
+    debugImplementation libs.androidx.ui.test.manifest
+    androidTestImplementation platform(libs.androidx.compose.bom)
+    androidTestImplementation libs.androidx.ui.test.junit4
+    implementation platform(libs.androidx.compose.bom)
+    implementation libs.androidx.activity.compose
+    implementation libs.androidx.material3
+    implementation libs.androidx.material
+    implementation libs.androidx.compose.material3
+    implementation libs.androidx.compose.constraintlayout
+    implementation libs.androidx.ui
+    implementation libs.androidx.ui.graphics
+    implementation libs.androidx.ui.tooling.preview
+
 }

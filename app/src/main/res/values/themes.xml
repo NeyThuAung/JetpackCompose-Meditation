@@ -1,9 +1,30 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.JetpackComposeMeditation" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.JetpackComposeMeditation" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/deepblue</item>
+        <item name="colorPrimaryVariant">@color/deepblue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/deepblue</item>
+        <item name="colorSecondaryVariant">@color/deepblue</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <!-- Status bar and navigation bar colors. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@android:color/transparent</item>
+        <!-- This makes the status bar icons dark if the background is light -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- Use translucent bars. -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+
     </style>
 
-    <style name="Theme.JetpackComposeMeditation" parent="Base.Theme.JetpackComposeMeditation" />
+
+    <style name="Theme.JetpackComposeMeditation.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.JetpackComposeMeditation.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
